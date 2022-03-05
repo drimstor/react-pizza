@@ -1,15 +1,19 @@
-import logo from './logo.svg';
-import './App.scss';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+import { Header } from './components';
+import { Home, Cart } from './pages';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>
-         Hello, World!
-        </h1>
-      </header>
+    <div className="wrapper">
+      <Header />
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Home />} exact />
+          <Route path="/cart" element={<Cart />} exact />
+        </Routes>
+      </div>
     </div>
   );
 }
